@@ -1,6 +1,3 @@
-// This project has as purpose to train the people to the games proposed for the Société Générale recruitment.
-// It has as goal to spread qualifications for these tests that the author estimates non-representative.
-
 #include <cstdlib> // Pour srand() et rand()
 #include <ctime>   // Pour time()
 #include <chrono>
