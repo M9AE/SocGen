@@ -59,11 +59,10 @@ int updatePassage(int w, int h, int dh, int index) {
     }
 
     // Initialisation
-    std::vector<std::string> picsPassageListe = {srcPath("passage0.png"), srcPath("passage1.png"), srcPath("passage2.png"), srcPath("passage3.png")};
     std::vector<Point> coordsListe = {{120, 50}, {395, 50}, {120, 200}, {395, 200}};
 
     // Première obtention de clic
-    display(coordsListe[index].x, coordsListe[index].y, picsPassageListe[0]);
+    display(coordsListe[index].x, coordsListe[index].y, srcPath("choixDifficulte.png"));
     int x,y;
     getMouse(x,y);
 
@@ -74,16 +73,9 @@ int updatePassage(int w, int h, int dh, int index) {
 
         // Renvoi des resultats & afichage
         if (y_>17 && y<160) {
-            if (x_>23 && x_<100) {
-                display(coordsListe[index].x, coordsListe[index].y, picsPassageListe[1]);
-                return 0;
-            } else if (x_>107 && x_<182) {
-                display(coordsListe[index].x, coordsListe[index].y, picsPassageListe[2]);
-                return 1;
-            } else if (x_>190 && x_<265) {
-                display(coordsListe[index].x, coordsListe[index].y, picsPassageListe[3]);
-                return 2;
-            }
+            if (x_>23 && x_<100) {return 0;} 
+            else if (x_>107 && x_<182) {return 1;} 
+            else if (x_>190 && x_<265) {return 2;}
         }
 
         displayMenu(w);
